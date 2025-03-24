@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدونة القصص</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>مدونة القصص</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="categories.html">التصنيفات</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="stories-grid">
+            <script>
+                let stories = "";
+                for (let i = 1; i <= 50; i++) {
+                    stories += `<article class="story">
+                                    <img src="images/story${i}.jpg" onerror="this.src='images/default.jpg'" alt="صورة القصة ${i}" class="story-image">
+                                    <h2>عنوان القصة ${i}</h2>
+                                    <p>وصف مختصر عن القصة ${i}...</p>
+                                    <a href="story.html?title=عنوان القصة ${i}&description=وصف مختصر عن القصة ${i}&file=story${i}.pdf" class="read-more">قراءة القصة</a>
+                                </article>`;
+                }
+                document.write(stories);
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 مدونة القصص. جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+</html>

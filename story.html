@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل القصة</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function loadStoryDetails() {
+            const params = new URLSearchParams(window.location.search);
+            document.getElementById("story-title").innerText = params.get("title");
+            document.getElementById("story-description").innerText = params.get("description");
+            document.getElementById("download-link").href = "download.php?file=" + params.get("file");
+        }
+        window.onload = loadStoryDetails;
+    </script>
+</head>
+<body>
+    <header>
+        <h1>تفاصيل القصة</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="categories.html">التصنيفات</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="story-details">
+            <h2 id="story-title"></h2>
+            <p id="story-description"></p>
+            <a id="download-link" href="#" class="download-btn">تحميل القصة</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 مدونة القصص. جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+</html>
